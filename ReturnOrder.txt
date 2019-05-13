@@ -1,0 +1,11 @@
+Purchase ID:A00000001
+Return ID:B00000001
+Reason:食物很差
+Time:2019-5-13
+
+Category:
+Name:
+Quantity:0
+Price:0
+
+Total price:0

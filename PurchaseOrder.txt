@@ -1,0 +1,9 @@
+ID:A00000001
+Time:2019-5-13
+
+Category:food
+Name:tomato
+Quantity:2
+Price:2.5
+
+Total price:5
