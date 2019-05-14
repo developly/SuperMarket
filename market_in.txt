@@ -1,9 +1,9 @@
 Name: XMUMarket
-Cash: 0
+Cash: 100
 
 category: food
 name: tomato
-quantity: 11
+quantity: 10
 production_date: 2019/5/1
 guarantee_period: 7
 price: 2.5
