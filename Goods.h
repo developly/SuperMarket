@@ -31,6 +31,16 @@ public:
         day=_day;
         price=_price;
     }
+
+    virtual void display()
+    {
+        cout<<"category: Goods"<<endl;
+        cout<<"name: "<<name<<endl;
+        cout<<"quantity: "<<quantity<<endl;
+        cout<<"production_date: "<<year<<"/"<<month<<"/"<<day<<endl;
+        cout<<"price: "<<price<<endl;
+        cout<<endl;
+    }
 };
 
 //派生日常用品类
@@ -41,6 +51,16 @@ public:
     DailyGoods(string _name,int _quantity,int _year,int _month,int _day,double _price):Goods(_name,_quantity,_year,_month,_day,_price)
     {
         price=_price;
+    }
+
+    void display()
+    {
+        cout<<"category: DailyGoods"<<endl;
+        cout<<"name: "<<name<<endl;
+        cout<<"quantity: "<<quantity<<endl;
+        cout<<"production_date: "<<year<<"/"<<month<<"/"<<day<<endl;
+        cout<<"price: "<<price<<endl;
+        cout<<endl;
     }
 
     friend istream& operator >> (istream& in, DailyGoods &dailyGoods);
@@ -58,6 +78,17 @@ public:
     Food(string _name,int _quantity,int _year,int _month,int _day,double _price, int _guaranteeperiod):Goods(_name,_quantity,_year,_month,_day,_price)
     {
         guaranteeperiod=_guaranteeperiod;
+    }
+
+    void display()
+    {
+        cout<<"category: food"<<endl;
+        cout<<"name: "<<name<<endl;
+        cout<<"quantity: "<<quantity<<endl;
+        cout<<"production_date: "<<year<<"/"<<month<<"/"<<day<<endl;
+        cout<<"guarantee_period: "<<guaranteeperiod<<endl;
+        cout<<"price: "<<price<<endl;
+        cout<<endl;
     }
 
     friend istream& operator >> (istream& in, Food &food);
@@ -79,6 +110,17 @@ public:
         maintenanceperiod=_maintenanceperiod;
     }
 
+    void display()
+    {
+        cout<<"category: ElectricalAppliance"<<endl;
+        cout<<"name: "<<name<<endl;
+        cout<<"quantity: "<<quantity<<endl;
+        cout<<"production_date: "<<year<<"/"<<month<<"/"<<day<<endl;
+        cout<<"color: "<<color<<endl;
+        cout<<"maintenance_period: "<<maintenanceperiod<<endl;
+        cout<<"price: "<<price<<endl;
+        cout<<endl;
+    }
     friend istream& operator >> (istream& in, ElectricalAppliance &electricalAppliance);
     friend ostream& operator << (ostream& out, const ElectricalAppliance &electricalAppliance);
 };
