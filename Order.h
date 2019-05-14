@@ -21,7 +21,7 @@ char rnum[10]="B00000001";
 //订单类
 class Order
 {
-public:
+protected:
     int year,month,day;
     struct goods
     {
@@ -64,12 +64,14 @@ public:
             }
         }
     }
+
+    friend class Supermarket;
 };
 
 //购货单
 class Purchaseorder:public Order
 {
-public:
+private:
     string ID;
     double total_price;
 public:
@@ -106,16 +108,18 @@ public:
     }
 
     friend ostream& operator <<(ostream& out,const Purchaseorder& purchaseorder);
+    friend class Supermarket;
 };
 
 //退货单
 class Returnorder:public Order
 {
-public:
+private:
     string pID;
     string rID;
     string reason;
     double total_price;
+public:
     Returnorder(string _pID,string _reason,int Array_class[],string Array_name[],double Array_price[],int Array_quantity[],int returnGoodsNum,double _total_price)
     :Order(Array_class, Array_name, Array_price, Array_quantity, returnGoodsNum)
     {
@@ -152,6 +156,7 @@ public:
     }
 
     friend ostream& operator <<(ostream& out,const Returnorder& returnorder);
+    friend class Supermarket;
 };
 
 //重载"<<" ">>"

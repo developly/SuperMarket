@@ -11,7 +11,7 @@ using namespace std;
 //商品类
 class Goods
 {
-public:
+protected:
     string name;              //商品名字
     int quantity;             //现有数量
     int year;                 //商品生产日期
@@ -41,7 +41,12 @@ public:
         cout<<"price: "<<price<<endl;
         cout<<endl;
     }
+    friend class Supermarket;
 };
+
+class Food;
+class DailyGoods;
+class ElectricalAppliance;
 
 //派生日常用品类
 class DailyGoods: public Goods
@@ -65,12 +70,16 @@ public:
 
     friend istream& operator >> (istream& in, DailyGoods &dailyGoods);
     friend ostream& operator << (ostream& out, const DailyGoods &dailyGoods);
+    friend double operator +(const DailyGoods& dailyGoods,const Food& food);
+    friend double operator +(const DailyGoods& dailyGoods,const ElectricalAppliance& electricalAppliance);
+    friend double operator *(const DailyGoods& dailyGoods,int num);
+    friend class Supermarket;
 };
 
 //派生食物类
 class Food: public Goods
 {
-public:
+private:
     int guaranteeperiod;      //保质期
 public:
     Food(){};
@@ -93,12 +102,16 @@ public:
 
     friend istream& operator >> (istream& in, Food &food);
     friend ostream& operator << (ostream& out, const Food &food);
+    friend double operator +(const DailyGoods& dailyGoods,const Food& food);
+    friend double operator +(const Food& food,const ElectricalAppliance& electricalAppliance);
+    friend double operator *(const Food& food,int num);
+    friend class Supermarket;
 };
 
 //派生家电类
 class ElectricalAppliance: public Goods
 {
-public:
+private:
     string color;             //颜色
     int maintenanceperiod;    //保修时间
 
@@ -123,6 +136,10 @@ public:
     }
     friend istream& operator >> (istream& in, ElectricalAppliance &electricalAppliance);
     friend ostream& operator << (ostream& out, const ElectricalAppliance &electricalAppliance);
+    friend double operator +(const DailyGoods& dailyGoods,const ElectricalAppliance& electricalAppliance);
+    friend double operator +(const Food& food,const ElectricalAppliance& electricalAppliance);
+    friend double operator *(const ElectricalAppliance& electricalAppliance,int num);
+    friend class Supermarket;
 };
 
 //重载"<<" ">>"

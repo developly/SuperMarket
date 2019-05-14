@@ -32,7 +32,7 @@ double Return_price[10];
 //超市类
 class Supermarket
 {
-public:
+private:
     string name;              //超市名字
     int cashold,cashnew;                 //现金
     Food *foods[20];          //商品
@@ -400,7 +400,6 @@ public:
         int existDays=sumdays_now-sumdays_food;
         if(existDays>foods[choose_goods]->guaranteeperiod)
         {
-            //cout<<"食品过期，无法出售"<<endl;
             return false;
         }
         return true;
