@@ -199,5 +199,34 @@ ostream& operator << (ostream& out, const ElectricalAppliance &electricalApplian
 }
 
 //重载"+" "*"
+double operator +(const DailyGoods& dailyGoods,const Food& food)
+{
+    return dailyGoods.price+food.price;
+}
+
+double operator +(const DailyGoods& dailyGoods,const ElectricalAppliance& electricalAppliance)
+{
+    return dailyGoods.price+electricalAppliance.price;
+}
+
+double operator +(const Food& food,const ElectricalAppliance& electricalAppliance)
+{
+    return food.price+electricalAppliance.price;
+}
+
+double operator *(const DailyGoods& dailyGoods,int num)
+{
+    return num+dailyGoods.price;
+}
+
+double operator *(const Food& food,int num)
+{
+    return num*food.price;
+}
+
+double operator *(const ElectricalAppliance& electricalAppliance,int num)
+{
+    return num*electricalAppliance.price;
+}
 
 #endif //SUPERMARKET_GOODS_H
