@@ -1,11 +1,12 @@
 Purchase ID:A00000001
 Return ID:B00000001
-Reason:食物很差
-Time:2019-5-13
+Reason:shiwu
+Time:2019-5-14
 
-Category:
-Name:
-Quantity:0
-Price:0
+Category:food
+Name:apple
+Quantity:1
+Price:1.5
 
-Total price:0
+Total price:1.5
+rice:0

@@ -1,9 +1,10 @@
 ID:A00000001
-Time:2019-5-13
+Time:2019-5-14
 
 Category:food
-Name:tomato
+Name:apple
 Quantity:2
-Price:2.5
+Price:1.5
 
-Total price:5
+Total price:3
+

@@ -134,6 +134,7 @@ public:
         cout<<"                            2.增加商品"<<endl;
         cout<<"                            3.购买商品"<<endl;
         cout<<"                            4.退换商品"<<endl;
+        cout<<"                         5.查询当日营业额"<<endl;
         cout<<"                            6.退出系统"<<endl;
         cout<<"                         您要选择的操作是? "<<endl;
         int choose;
@@ -151,6 +152,9 @@ public:
                 break;
             case 4:
                 returnGoods();
+                break;
+            case 5:
+                cout<<"当日营业额为："<<cashnew-cashold<<endl;
                 break;
             case 6:
                 return;
@@ -510,14 +514,6 @@ public:
         returnGoodsProcess_two(ID,reason);
     }
 
-    //将所退换商品存入数组方便生成订单
-    void returnToOrder(string name,int num)
-    {
-        Return_name[returnGoodsNum]=name;
-        Return_quantity[returnGoodsNum]=num;
-        returnGoodsNum++;
-    }
-
     //退货流程1
     void returnGoodsProcess_one(string ID)
     {
@@ -535,7 +531,8 @@ public:
         cin>>name;
         cout<<"请输入您想要退货的数量"<<endl;
         cin>>num;
-        returnToOrder(name,num);
+        Return_name[returnGoodsNum]=name;
+        Return_quantity[returnGoodsNum]=num;
         for(int i=1;i<FoodNum;i++)
         {
             if(foods[i]->name==name)
@@ -563,6 +560,7 @@ public:
                 Return_class[returnGoodsNum]=3;
             }
         }
+        returnGoodsNum++;
     }
 
     //退货流程2
