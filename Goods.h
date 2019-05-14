@@ -233,7 +233,7 @@ double operator +(const Food& food,const ElectricalAppliance& electricalApplianc
 
 double operator *(const DailyGoods& dailyGoods,int num)
 {
-    return num+dailyGoods.price;
+    return num*dailyGoods.price;
 }
 
 double operator *(const Food& food,int num)
