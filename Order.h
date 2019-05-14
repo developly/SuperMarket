@@ -85,17 +85,7 @@ public:
     //展示订单
     void showOrder()
     {
-        cout<<"订单编号为："<<ID<<endl;
-        cout<<"当前日期为："<<(_now->tm_year)+1900<<"-"<<(_now->tm_mon)+1<<"-"<<_now->tm_mday<<endl;
-        cout<<"所购买的产品有:"<<endl<<endl;
-        for(int i=1;i<Num;i++)
-        {
-            cout<<"category:"<<goods[i].category<<endl;
-            cout<<"name:"<<goods[i].name<<endl;
-            cout<<"quantity:"<<goods[i].quantity<<endl;
-            cout<<"price:"<<goods[i].price<<endl<<endl;
-        }
-        cout<<"total price:"<<total_price<<endl;
+        cout<<*this;
     }
 
     //存储定单
@@ -114,6 +104,8 @@ public:
         }
         io_file<<"Total price:"<<total_price<<endl;
     }
+
+    friend ostream& operator <<(ostream& out,const Purchaseorder& purchaseorder);
 };
 
 //退货单
@@ -137,19 +129,7 @@ public:
     //展示退货单
     void showOrder()
     {
-        cout<<"购货编号为："<<pID<<endl;
-        cout<<"退货编号为："<<rID<<endl;
-        cout<<"退货原因为："<<reason<<endl;
-        cout<<"当前日期为："<<(_now->tm_year)+1900<<"-"<<(_now->tm_mon)+1<<"-"<<_now->tm_mday<<endl;
-        cout<<"所退掉的产品有:"<<endl<<endl;
-        for(int i=1;i<Num;i++)
-        {
-            cout<<"category:"<<goods[i].category<<endl;
-            cout<<"name:"<<goods[i].name<<endl;
-            cout<<"quantity:"<<goods[i].quantity<<endl;
-            cout<<"price:"<<goods[i].price<<endl<<endl;
-        }
-        cout<<"total price:"<<total_price<<endl;
+        cout<<*this;
     }
 
     //存储定单
@@ -170,6 +150,43 @@ public:
         }
         io_file<<"Total price:"<<total_price<<endl;
     }
+
+    friend ostream& operator <<(ostream& out,const Returnorder& returnorder);
 };
+
+//重载"<<" ">>"
+ostream& operator <<(ostream& out,const Purchaseorder& purchaseorder)
+{
+    out<<"订单编号为："<<purchaseorder.ID<<endl;
+    out<<"当前日期为："<<(_now->tm_year)+1900<<"-"<<(_now->tm_mon)+1<<"-"<<_now->tm_mday<<endl;
+    out<<"所购买的产品有:"<<endl<<endl;
+    for(int i=1;i<purchaseorder.Num;i++)
+    {
+        out<<"category:"<<purchaseorder.goods[i].category<<endl;
+        out<<"name:"<<purchaseorder.goods[i].name<<endl;
+        out<<"quantity:"<<purchaseorder.goods[i].quantity<<endl;
+        out<<"price:"<<purchaseorder.goods[i].price<<endl<<endl;
+    }
+    out<<"total price:"<<purchaseorder.total_price<<endl;
+    return out;
+}
+
+ostream& operator <<(ostream& out,const Returnorder& returnorder)
+{
+    out<<"购货编号为："<<returnorder.pID<<endl;
+    out<<"退货编号为："<<returnorder.rID<<endl;
+    out<<"退货原因为："<<returnorder.reason<<endl;
+    out<<"当前日期为："<<(_now->tm_year)+1900<<"-"<<(_now->tm_mon)+1<<"-"<<_now->tm_mday<<endl;
+    out<<"所退掉的产品有:"<<endl<<endl;
+    for(int i=1;i<returnorder.Num;i++)
+    {
+        out<<"category:"<<returnorder.goods[i].category<<endl;
+        out<<"name:"<<returnorder.goods[i].name<<endl;
+        out<<"quantity:"<<returnorder.goods[i].quantity<<endl;
+        out<<"price:"<<returnorder.goods[i].price<<endl<<endl;
+    }
+    out<<"total price:"<<returnorder.total_price<<endl;
+    return out;
+}
 
 #endif //SUPERMARKET_ORDER_H

@@ -198,4 +198,6 @@ ostream& operator << (ostream& out, const ElectricalAppliance &electricalApplian
     return out;
 }
 
+//重载"+" "*"
+
 #endif //SUPERMARKET_GOODS_H
