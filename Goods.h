@@ -22,13 +22,14 @@ public:
     //构造函数
     Goods() { }
 
-    Goods(string _name,int _quantity,int _year,int _month,int _day)
+    Goods(string _name,int _quantity,int _year,int _month,int _day,double _price)
     {
         name=_name;
         quantity=_quantity;
         year=_year;
         month=_month;
         day=_day;
+        price=_price;
     }
 };
 
@@ -37,7 +38,7 @@ class DailyGoods: public Goods
 {
 public:
     DailyGoods(){}
-    DailyGoods(string _name,int _quantity,int _year,int _month,int _day,double _price):Goods(_name,_quantity,_year,_month,_day)
+    DailyGoods(string _name,int _quantity,int _year,int _month,int _day,double _price):Goods(_name,_quantity,_year,_month,_day,_price)
     {
         price=_price;
     }
@@ -54,7 +55,7 @@ public:
 public:
     Food(){};
 
-    Food(string _name,int _quantity,int _year,int _month,int _day,double _price, int _guaranteeperiod):Goods(_name,_quantity,_year,_month,_day)
+    Food(string _name,int _quantity,int _year,int _month,int _day,double _price, int _guaranteeperiod):Goods(_name,_quantity,_year,_month,_day,_price)
     {
         guaranteeperiod=_guaranteeperiod;
     }
@@ -72,7 +73,7 @@ public:
 
 public:
     ElectricalAppliance() {}
-    ElectricalAppliance(string _name,int _quantity,int _year,int _month,int _day,double _price, string _color,int _maintenanceperiod):Goods(_name,_quantity,_year,_month,_day)
+    ElectricalAppliance(string _name,int _quantity,int _year,int _month,int _day,double _price, string _color,int _maintenanceperiod):Goods(_name,_quantity,_year,_month,_day,_price)
     {
         color=_color;
         maintenanceperiod=_maintenanceperiod;

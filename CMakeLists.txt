@@ -3,4 +3,4 @@ project(SuperMarket)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(SuperMarket main.cpp Goods.h Order.h)
+add_executable(SuperMarket main.cpp Goods.h Order.h Supermarket.h)

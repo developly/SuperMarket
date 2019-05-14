@@ -1,12 +1,11 @@
 Purchase ID:A00000001
 Return ID:B00000001
-Reason:shiwu
+Reason:商品质量差
 Time:2019-5-14
 
-Category:food
-Name:apple
-Quantity:1
-Price:1.5
+Category:DailyGoods
+Name:notebook
+Quantity:5
+Price:15
 
-Total price:1.5
-rice:0
+Total price:75

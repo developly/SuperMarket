@@ -1,10 +1,9 @@
 ID:A00000001
 Time:2019-5-14
 
-Category:food
-Name:apple
-Quantity:2
-Price:1.5
+Category:DailyGoods
+Name:notebook
+Quantity:10
+Price:15
 
-Total price:3
-
+Total price:150
